@@ -1,0 +1,1 @@
+Store images that illustrate the multi‑agent workflow here.
