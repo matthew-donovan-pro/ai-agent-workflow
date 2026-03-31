@@ -1,27 +1,46 @@
-# Multi‑Agent Workflow System
+# Multi-Agent Workflow System
 
-This repository illustrates a simple multi‑agent workflow.  The demonstration uses plain Python functions to represent a planner, executor and reviewer agent.  In a real AI system, these agents would wrap calls to large language models or other reasoning engines.
+**Multi-stage agent workflow demo using planner, executor, and reviewer roles for structured task processing.**
+
+---
+
+## Overview
+
+This project demonstrates how complex tasks can be decomposed into coordinated agent stages to improve structure and reliability.
+
+It shows:
+- task decomposition into actionable steps  
+- staged execution through defined roles  
+- validation of outputs before final approval  
+
+The implementation uses simple Python functions to make the workflow explicit. In production, these agents would interface with LLMs, external tools, and error-handling layers.
+
+---
 
 ## Components
 
-- **Planner** – decomposes a task into one or more subtasks.
-- **Executor** – performs a subtask and returns a result.
-- **Reviewer** – checks the results and approves or rejects them.
+- **Planner** — decomposes a task into one or more subtasks  
+- **Executor** — performs actions and produces results  
+- **Reviewer** — validates outputs and determines acceptance  
+
+---
 
 ## Example
 
-The demo solves a basic arithmetic problem, showing how information flows between agents:
+The demo processes a simple task:
 
-1. The planner receives the request "Compute 3 + 5" and generates a plan: `["Add 3 and 5"]`.
-2. The executor performs the operation and returns `8`.
-3. The reviewer checks that the result is correct.
+1. Planner receives: `"Compute 3 + 5"`  
+2. Planner generates: `["Add 3 and 5"]`  
+3. Executor returns: `8`  
+4. Reviewer validates the result  
 
-Run the demo with:
+This illustrates how control flow moves through the system.
+
+---
+
+## Demo
+
+Run:
 
 ```bash
 python demo/run_demo.py
-```
-
-## IP Notes
-
-This is purely a demonstration; the planner, executor and reviewer agents here do not call external services.  Production workflows would involve LLM calls, chain‑of‑thought prompting and error handling which are not shown.
