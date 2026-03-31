@@ -19,9 +19,11 @@ The implementation uses simple Python functions to make the workflow explicit. I
 
 ## Components
 
-- **Planner** — decomposes a task into one or more subtasks  
-- **Executor** — performs actions and produces results  
-- **Reviewer** — validates outputs and determines acceptance  
+- Planner decomposes user requests into structured, executable steps
+- Executor processes tasks with defined input/output contracts
+- Reviewer validates outputs against expected results before approval
+- Implements basic retry and validation patterns to simulate production agent control flows
+- Demonstrates deterministic execution paths across multi-stage workflows  
 
 ---
 
